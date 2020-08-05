@@ -1,7 +1,7 @@
 format_version: 3
 pipelines:
-  sonar-as-code:
-    group: default
+  sonar-as-code-aaaa:
+    group: xiaoqu
     materials:
       git:
         git: https://github.com/1483523635/money-tracker
