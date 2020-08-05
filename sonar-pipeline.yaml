@@ -1,0 +1,35 @@
+format_version: 3
+pipelines:
+  sonar-2:
+    group: xiaoqu
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: https://github.com/1483523635/money-tracker
+        shallow_clone: false
+        auto_update: true
+        branch: master
+    stages:
+    - analyize:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          sonar-scanner:
+            timeout: 0
+            - plugin:
+                configuration:
+                  id: script-executor
+                  version: 0.3.0
+                options:
+                  script: |-
+                    . "/Users/lqqu/.zshrc"
+                    sonar-scanner
+                  shtype: bash
+                run_if: passed
+
