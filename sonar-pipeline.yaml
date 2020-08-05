@@ -1,10 +1,10 @@
 format_version: 3
 pipelines:
   sonar-as-code:
-    group: xiaoqu
+    group: defaultGroup
     label_template: ${COUNT}
     lock_behavior: none
-    display_order: 10
+    display_order: -1
     materials:
       git:
         git: https://github.com/1483523635/money-tracker
@@ -23,6 +23,12 @@ pipelines:
           sonar-scanner:
             timeout: 0
             tasks:
+            - exec:
+                command: pwd
+                run_if: passed
+            - exec:
+                command: sonar-scanner
+                run_if: passed
             - plugin:
                 configuration:
                   id: script-executor
