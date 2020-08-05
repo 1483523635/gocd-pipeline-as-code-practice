@@ -4,7 +4,7 @@ pipelines:
     group: xiaoqu
     label_template: ${COUNT}
     lock_behavior: none
-    display_order: -1
+    display_order: 10
     materials:
       git:
         git: https://github.com/1483523635/money-tracker
