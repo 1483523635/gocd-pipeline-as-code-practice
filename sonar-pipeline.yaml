@@ -22,6 +22,7 @@ pipelines:
         jobs:
           sonar-scanner:
             timeout: 0
+            tasks:
             - plugin:
                 configuration:
                   id: script-executor
