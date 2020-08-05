@@ -1,3 +1,4 @@
+format_version: 9
 pipelines:
   sonar-as-code-aaaa:
     group: default
